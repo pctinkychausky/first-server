@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+
+<body>
+  <h1>Home Page</h1>
+  <a href="/about.html">About page</a>
+
+  <ul id="cars"></ul>
+
+  <script>
+    const listNode = document.getElementById('cars');
+
+    const fetchCars = async () => {
+      const response = await fetch('/api/v1/cars');
+      const data = await response.json();
+
+      const frag = document.createDocumentFragment();
+
+      for (const car of data) {
+        const li = document.createElement('li');
+        li.textContent = car.name
+        frag.append(li);
+      }
+
+      listNode.replaceChildren(frag);
+    }
+
+    fetchCars();
+  </script>
+
+</body>
+
+</html>

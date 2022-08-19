@@ -1,0 +1,25 @@
+{
+  "name": "first-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.3",
+    "nanoid": "^4.0.0",
+    "nodemon": "^2.0.18"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
