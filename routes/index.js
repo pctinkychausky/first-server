@@ -1,7 +1,10 @@
 import express from "express";
 import { nanoid } from "nanoid";
+import app from "../server";
 
 const router = express.Router();
+
+const cars = [{ name: "Bugatti", _id: "123" }];
 
 function setupRoutes(app) {
   app.get("/api/v1/cars/:id?", (req, res) => {
